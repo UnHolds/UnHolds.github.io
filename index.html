@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Hold-Solutions</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet"  href="/MainCSS.css">
+		<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+		<style>
+			body {
+				font-family: 'Varela', sans-serif;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class= "maincont">
+                <div class="mainstart" id="mainstart">
+                    <div class="mainstart2" id="mainstart2">
+				    <div class= "mainsubcont">
+					<div class="texttransform">
+						<pre id="typewriter">
+My name is <span class="var-highlight">Hold Alexander</span>, i am a student living in <span class="var-highlight">Austria</span>.
+In my free time i often work on <span class="string-highlight">electronic projects</span> and <span class="string-highlight">develop software</span>.
+I am interested in <span class="string-highlight">security</span>, <span class="string-highlight">reverse engineering</span> and <span class="string-highlight">networking</span>.
+
+If you want to get in touch with me you can use 
+this email address: <span class="var-highlight">info[at]hold-solutions[dot]de</span>
+or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
+						</pre>
+					</div>
+                    <div class="maintext" id="maintext">
+My name is <span class="var-highlight">Hold Alexander</span>, i am a student living in <span class="var-highlight">Austria</span>.<br>
+In my free time i often work on <span class="string-highlight">electronic projects</span> and <span class="string-highlight">develop software</span>.<br>
+I am interested in <span class="string-highlight">security</span>, <span class="string-highlight">reverse engineering</span> and <span class="string-highlight">networking</span>.<br>
+<br>
+If you want to get in touch with me you can use <br>
+this email address: <span class="var-highlight">info[at]hold-solutions[dot]de</span><br>
+or Telegram: <span class="var-highlight">[at]DarkSunHD</span><br>
+                    </div>
+
+					<div class="buttoncont">
+						<table>
+  							<tbody>
+    								<tr>
+      									<td data-label="">
+										<button class="button button" id="projectsbutton" onclick="aniprojects()">Projects</button>
+									</td>
+      									<td data-label="">
+										<button class="button button" id="linksbutton" onclick="anilinks()">Links</button>
+									</td>
+      									<td data-label="">
+										<button class="button button" id="downloadbutton" onclick="anidownload()">Download</button>
+									</td>
+      									<td data-label="">
+										<button class="button button" id="impressumbutton" onclick="aniimpressum()">Impressum</button>
+									</td>
+    								</tr>
+  							</tbody>
+						</table>
+					</div>
+    					
+					<script type="text/javascript">
+						function setupTypewriter(t) {
+	    						var HTML = t.innerHTML;
+	   	 					t.innerHTML = "";
+	    						var cursorPosition = 0,
+	        						tag = "",
+	        						writingTag = false,
+	        						tagOpen = false,
+	        						typeSpeed = 15,
+        							tempTypeSpeed = 0;
+	
+		    				var type = function() {
+        
+	        					if (writingTag === true) {
+		        	    				tag += HTML[cursorPosition];
+		        				}
+	
+	        					if (HTML[cursorPosition] === "<") {
+	            						tempTypeSpeed = 0;
+	            						
+								if (tagOpen) {
+	        	        					tagOpen = false;
+	                						writingTag = true;
+	            						} else {
+	                						tag = "";
+	                						tagOpen = true;
+	              		  					writingTag = true;
+	                						tag += HTML[cursorPosition];
+	            						}
+	        					}
+	        			
+							if (!writingTag && tagOpen) {
+	           	 					tag.innerHTML += HTML[cursorPosition];
+	        					}
+
+	        					if (!writingTag && !tagOpen) {
+
+	           	 					if (HTML[cursorPosition] === " ") {
+	                						tempTypeSpeed = 0;
+	            						} else {
+	                						tempTypeSpeed =  typeSpeed;
+	            						}
+
+	            						t.innerHTML += HTML[cursorPosition];
+	        					}
+
+	        					if (writingTag === true && HTML[cursorPosition] === ">") {
+	            						tempTypeSpeed =  typeSpeed;
+	            						writingTag = false;
+	            		
+								if (tagOpen) {
+	                						var newSpan = document.createElement("span");
+	                						t.appendChild(newSpan);
+	                						newSpan.innerHTML = tag;
+	                						tag = newSpan.firstChild;
+	            						}
+	        					}
+
+	        					cursorPosition += 1;
+	        			
+							if (cursorPosition < HTML.length - 1) {
+	           			 			setTimeout(type, tempTypeSpeed);
+	        					}
+
+	    					};
+
+	    					return {
+	        					type: type
+	    					};
+					}
+
+					</script>     
+				</div>
+			</div>
+            </div>
+            <div class="projects" id="projectsmain">
+                <div class="subprojects" id="projectsani">
+                     <div id="projectsani2">
+                        <h1>Projects</h1>
+                         <h4>
+                             Search:     
+                             <input id='projectssearch' onkeyup='searchTable()' type='text'>
+                         </h4>
+                         <div class="scrollbar" id="scrollproject">
+                                <div class="force-overflowproject">
+                                    <h4>
+                                        <table id='projectstale'>
+                                            <tr>
+                                                <td>Launchpad and Laserharp</td>
+                                                <td>
+                                                    <button class="button button" onclick="window.location.href='/blog/Launchpad_and_Laserharp.html'">Read more</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>STM32 Serial-MIDI - USB-MIDI bridge</td>
+                                                <td>
+                                                    <button class="button button" onclick="window.location.href='/blog/STM32_Serial-MIDI_-_USB-MIDI-bridge.html'">Read more</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Website: Hold-Solutions</td>
+                                                <td>
+                                                    <button class="button button" onclick="window.location.href='/blog/Website:_Hold-Solutions.html'">Read more</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </h4>
+                                    <script>
+                                    function searchTable() {
+                                        var input, filter, found, table, tr, td, i, j;
+                                        input = document.getElementById("projectssearch");
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById("projectstale");
+                                        tr = table.getElementsByTagName("tr");
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName("td");
+                                            for (j = 0; j < td.length; j++) {
+                                                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                    found = true;
+                                                }
+                                            }
+                                            if (found) {
+                                                tr[i].style.display = "";
+                                                found = false;
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }
+                                    }
+                                    </script>        
+                                </div>
+                            </div>
+                        <button class="button button2" id="projectsclosebutton" onclick="aniprojectsclose()">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="links" id="linksmain">
+                <div class="sublinks" id="linksani">
+                     <div id="linksani2">
+                        <h1>Links</h1>
+                         <h4>
+                            GitHub:&emsp;&emsp;&emsp;&emsp; <a href="https://github.com/DarkSunHD" style="color: white">https://github.com/DarkSunHD</a><br>
+                            IT-Syndikat:&emsp;&emsp; <a href="https://it-syndikat.org/" style="color: white">https://it-syndikat.org/</a><br>
+                            Twitter:&emsp;&emsp;&emsp;&emsp; <a href="https://twitter.com/AlexHold98" style="color: white">https://twitter.com/AlexHold98</a><br>
+                            RepairCafe:&emsp;&emsp; <a href="http://repaircafe-ausserfern.at/" style="color: white">http://repaircafe-ausserfern.at/</a><br> 
+                            Hackaday:&emsp;&emsp;&emsp;<a href="http://hackaday.com/" style="color: white">http://hackaday.com/</a><br> 
+                         </h4>
+                        <button class="button button2" id="linksclosebutton" onclick="anilinksclose()">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="download" id="downloadmain">
+                <div class="subdownload" id="downloadani">
+                     <div id="downloadani2">
+                        <h1>Download</h1>
+                         <h4>
+                             Search:     
+                             <input id='downloadsearch' onkeyup='searchTable()' type='text'>
+                         </h4>
+                         <div class="scrollbar" id="scrolldownload">
+                                <div class="force-overflowdownload">
+                                    <h4>                                       
+                                        <table id='downloadtable'>
+                                            <tr>
+                                                <td>Nothing to download</td>
+                                                <td>
+                                                    <button class="button button" onclick="">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>...</td>
+                                                <td>
+                                                    <button class="button button" onclick="">Download</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </h4>
+                                    <script>
+                                    function searchTable() {
+                                        var input, filter, found, table, tr, td, i, j;
+                                        input = document.getElementById("downloadsearch");
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById("downloadtable");
+                                        tr = table.getElementsByTagName("tr");
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName("td");
+                                            for (j = 0; j < td.length; j++) {
+                                                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                    found = true;
+                                                }
+                                            }
+                                            if (found) {
+                                                tr[i].style.display = "";
+                                                found = false;
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }
+                                    }
+                                    </script>
+                                    
+                                </div>
+                            </div>
+                        <button class="button button2" id="downloadclosebutton" onclick="anidownloadclose()">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="impressum" id="impressummain">
+                <div class="subimpressum" id="impressumani">
+                     <div id="impressumani2">
+                        <h1>Impressum</h1>
+                         <h4>
+                             
+                             *insert good impressum*
+                         </h4>
+                        <button class="button button2" id="impressumclosebutton" onclick="aniimpressumclose()">Close</button>
+                    </div>
+                </div>
+            </div>
+                
+            <script type="text/javascript">
+                
+                var firststartprojects = true;
+                var firststartlinks = true;
+                var firststartdownload = true;
+                var firststartimpressum = true;
+                
+                
+                var firstst = true;
+                
+                var active = false;
+                
+                var close = false;
+                var open = false;
+                
+                
+                function aniprojects(){
+                    
+                    // 1 show 
+                    // 2 hide
+                    
+                    //mainstart
+                    //headline
+                    
+                    
+                    if(active){
+                        return;
+                    }
+                    
+                    active = true;
+                    
+                    if(firststartprojects){
+                        document.getElementsByClassName('subprojects')[0].style.visibility = 'visible';
+                        firststartprojects = false;
+                    }
+                    
+                    close = false;
+                    
+                    
+                    var elm = document.getElementById('projectsani');
+                    var newone = elm.cloneNode(true); 
+                    elm.parentNode.replaceChild(newone, elm); 
+                    document.getElementById('projectsani').className ='unbluranimation';
+                    document.getElementById('projectsani').style.webkitAnimationPlayState="running";
+                    
+                    
+                    elm = document.getElementById('projectsani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('projectsani2').className ='bluranimation';
+                    document.getElementById('projectsani2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('mainstart2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="running";
+                    
+                    document.getElementById('projectsmain').hidden = "";
+                    
+                    open = true;
+                    var aniobj = document.getElementById('headline2');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(open){
+                            document.getElementById('mainstart').hidden = "hidden";
+                        }
+                    },false);
+                    
+                    
+                }
+                
+                function aniprojectsclose(){
+
+                    open = false;
+                    
+                    var elm = document.getElementById('mainstart2');
+                    var newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('projectsani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('projectsani2').className ='bluranimation';
+                    document.getElementById('projectsani2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('mainstart');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart').className ='unbluranimation';
+                    document.getElementById('mainstart').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('headline');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline').className ='unbluranimation';
+                    document.getElementById('headline').style.webkitAnimationPlayState="running";
+                    
+                    if(firstst){
+                        document.getElementsByClassName('maintext')[0].style.visibility = 'visible';
+                        firstst = false;
+                    }
+                    
+                    document.getElementById('mainstart').hidden = "";
+                    
+                    close = true;
+                    var aniobj = document.getElementById('headline');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(close){
+                        document.getElementById('projectsmain').hidden = "hidden";
+                        }
+                    },false);
+                      
+                    
+                    active = false;
+                    
+                    
+                        
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                function anilinks(){
+                    
+                    // 1 show 
+                    // 2 hide
+                    
+                    //mainstart
+                    //headline
+                    
+                    if(active){
+                        return;
+                    }
+                    
+                    active = true;
+                    
+                    
+                    if(firststartlinks){
+                        document.getElementsByClassName('sublinks')[0].style.visibility = 'visible';
+                        firststartlinks = false;
+                    }
+                    
+                    close = false;
+                    
+                    var elm = document.getElementById('linksani');
+                    var newone = elm.cloneNode(true); 
+                    elm.parentNode.replaceChild(newone, elm); 
+                    document.getElementById('linksani').className ='unbluranimation';
+                    document.getElementById('linksani').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('linksani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('linksani2').className ='bluranimation';
+                    document.getElementById('linksani2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('mainstart2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="running";
+                    
+                     document.getElementById('linksmain').hidden = "";
+                    
+                    open = true;
+                    var aniobj = document.getElementById('headline2');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(open){
+                            document.getElementById('mainstart').hidden = "hidden";
+                        }
+                    },false);
+                    
+                }
+                
+                function anilinksclose(){
+                    
+                    open = false;
+                    
+                    var elm = document.getElementById('mainstart2');
+                    var newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('linksani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('linksani2').className ='bluranimation';
+                    document.getElementById('linksani2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('mainstart');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart').className ='unbluranimation';
+                    document.getElementById('mainstart').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('headline');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline').className ='unbluranimation';
+                    document.getElementById('headline').style.webkitAnimationPlayState="running";
+                        
+                    
+                    if(firstst){
+                        document.getElementsByClassName('maintext')[0].style.visibility = 'visible';
+                        firstst = false;
+                    }
+                    
+                    
+                    document.getElementById('mainstart').hidden = "";
+                    
+                    close = true;
+                    var aniobj = document.getElementById('headline');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(close){
+                        document.getElementById('linksmain').hidden = "hidden";
+                        }
+                    },false);
+                    
+                    
+                    active = false;
+                }
+                
+                
+                
+                
+                
+                
+                
+                function anidownload(){
+                    
+                    // 1 show 
+                    // 2 hide
+                    
+                    //mainstart
+                    //headline
+                    
+                    if(active){
+                        return;
+                    }
+                    
+                    active = true;
+                    
+                    
+                    if(firststartdownload){
+                        document.getElementsByClassName('subdownload')[0].style.visibility = 'visible';
+                        firststartdownload = false;
+                    }
+                    
+                    close = false;
+                    
+                    var elm = document.getElementById('downloadani');
+                    var newone = elm.cloneNode(true); 
+                    elm.parentNode.replaceChild(newone, elm); 
+                    document.getElementById('downloadani').className ='unbluranimation';
+                    document.getElementById('downloadani').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('downloadani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('downloadani2').className ='bluranimation';
+                    document.getElementById('downloadani2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('mainstart2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="running";
+
+                     document.getElementById('downloadmain').hidden = "";
+                    
+                    open = true;
+                    var aniobj = document.getElementById('headline2');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(open){
+                            document.getElementById('mainstart').hidden = "hidden";
+                        }
+                    },false);
+                    
+                }
+                
+                function anidownloadclose(){
+                    
+                    open = false;
+                    
+                    var elm = document.getElementById('mainstart2');
+                    var newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('downloadani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('downloadani2').className ='bluranimation';
+                    document.getElementById('downloadani2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('mainstart');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart').className ='unbluranimation';
+                    document.getElementById('mainstart').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('headline');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline').className ='unbluranimation';
+                    document.getElementById('headline').style.webkitAnimationPlayState="running";
+                        
+                    
+                    if(firstst){
+                        document.getElementsByClassName('maintext')[0].style.visibility = 'visible';
+                        firstst = false;
+                    }
+                    
+                    
+                    document.getElementById('mainstart').hidden = "";
+                    
+                    close = true;
+                    var aniobj = document.getElementById('headline');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(close){
+                        document.getElementById('downloadmain').hidden = "hidden";
+                        }
+                    },false);
+                    
+                    
+                    active = false;
+                }
+                
+                
+                
+                
+                
+                function aniimpressum(){
+                    
+                    // 1 show 
+                    // 2 hide
+                    
+                    //mainstart
+                    //headline
+                    
+                    if(active){
+                        return;
+                    }
+                    
+                    active = true;
+                    
+                    
+                    if(firststartimpressum){
+                        document.getElementsByClassName('subimpressum')[0].style.visibility = 'visible';
+                        firststartimpressum = false;
+                    }
+                    
+                    close = false;
+                    
+                    var elm = document.getElementById('impressumani');
+                    var newone = elm.cloneNode(true); 
+                    elm.parentNode.replaceChild(newone, elm); 
+                    document.getElementById('impressumani').className ='unbluranimation';
+                    document.getElementById('impressumani').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('impressumani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('impressumani2').className ='bluranimation';
+                    document.getElementById('impressumani2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('mainstart2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="running";
+                    
+                     document.getElementById('impressummain').hidden = "";
+                    
+                    open = true;
+                    var aniobj = document.getElementById('headline2');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(open){
+                            document.getElementById('mainstart').hidden = "hidden";
+                        }
+                    },false);
+                    
+
+                }
+                
+                function aniimpressumclose(){
+                    
+                    open = false;
+                    
+                    var elm = document.getElementById('mainstart2');
+                    var newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart2').className ='bluranimation';
+                    document.getElementById('mainstart2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('impressumani2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('impressumani2').className ='bluranimation';
+                    document.getElementById('impressumani2').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('mainstart');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('mainstart').className ='unbluranimation';
+                    document.getElementById('mainstart').style.webkitAnimationPlayState="running";
+                    
+                    elm = document.getElementById('headline2');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline2').className ='bluranimation';
+                    document.getElementById('headline2').style.webkitAnimationPlayState="paused";
+                    
+                    elm = document.getElementById('headline');
+                    newone = elm.cloneNode(true);
+                    elm.parentNode.replaceChild(newone, elm);
+                    document.getElementById('headline').className ='unbluranimation';
+                    document.getElementById('headline').style.webkitAnimationPlayState="running";
+                        
+                    
+                    if(firstst){
+                        document.getElementsByClassName('maintext')[0].style.visibility = 'visible';
+                        firstst = false;
+                    }
+                
+                    
+                    document.getElementById('mainstart').hidden = "";
+                    
+                    close = true;
+                    var aniobj = document.getElementById('headline');
+                    aniobj.addEventListener("webkitAnimationEnd",function(e){
+                        if(close){
+                        document.getElementById('impressummain').hidden = "hidden";
+                        }
+                    },false);
+                    
+                    
+                    
+                    active = false;
+                }
+                
+                
+                
+            </script>
+               
+            </div>
+            
+
+
+			<div class="Absolute-Center ">
+				<div class="setmid" id="idsetmid">
+					<div class="headline" >
+						<nobr>
+                            <div id="headline">
+                                <div id="headline2">
+                                    <div class="glitch" data-text="HOLD-SOLUTIONS">HOLD-SOLUTIONS</div></div>
+                            </div>
+						</nobr>
+					</div>
+				</div>
+				<canvas id="canvas"></canvas>
+				<script  src="MainJS.js"></script>
+			</div>
+		</div>
+		<script type="text/javascript">
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+				document.getElementsByClassName('main')[0].style.visibility = 'hidden';
+				alert("No mobile version :(");
+			}else{
+			
+			}
+		</script>
+	</body>
+</html>
