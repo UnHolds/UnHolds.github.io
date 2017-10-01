@@ -299,7 +299,6 @@ function setup() {
     document.getElementsByClassName('subdownload')[0].style.visibility = 'hidden';
     document.getElementsByClassName('subimpressum')[0].style.visibility = 'hidden';
 
-
     document.getElementsByClassName('maintext')[0].style.visibility = 'hidden';
 
     document.getElementsByClassName('headline')[0].style.visibility = 'hidden';
