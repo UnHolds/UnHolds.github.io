@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
+    <!--  TODO:
+        -> add bool for button (do not trigger if close is active!)
+        -> Impressum to Mail
+        -> Project to Private
+    -->
 <head>
     <title>Hold-Solutions</title>
     <meta charset="UTF-8">
@@ -136,6 +141,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                         <h1>
                             Projects
                         </h1>
+                        <!--
                         <h4>
                             Search:
                             <input id='projectssearch' onkeyup='searchTable()' type='text'>
@@ -194,6 +200,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                                 </script>
                             </div>
                         </div>
+                        -->
                         <button class="button2" id="projectsclosebutton" onclick="aniprojectsclose()">Close</button>
                     </div>
                 </div>
@@ -418,11 +425,12 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                         if (close) {
                             document.getElementById('projectsmain').hidden = "hidden";
                             activeclose = false;
+                            active = false;
                         }
                     }, false);
 
 
-                    active = false;
+                    //active = false;
                     
 
 
@@ -547,11 +555,12 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                         if (close) {
                             document.getElementById('linksmain').hidden = "hidden";
                             activeclose = false;
+                            active = false;
                         }
                     }, false);
 
 
-                    active = false;
+                    //active = false;
                 }
 
 
@@ -672,11 +681,12 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                         if (close) {
                             document.getElementById('downloadmain').hidden = "hidden";
                             activeclose = false;
+                            active = false;
                         }
                     }, false);
 
 
-                    active = false;
+                    //active = false;
                 }
 
 
@@ -796,12 +806,13 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                         if (close) {
                             document.getElementById('impressummain').hidden = "hidden";
                             activeclose = false;
+                            active = false;
                         }
                     }, false);
 
 
 
-                    active = false;
+                    //active = false;
                 }
 
             </script>
