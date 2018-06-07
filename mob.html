@@ -127,14 +127,14 @@
                     <h4>
 
                         My name is <span class="var-highlight">Hold Alexander</span>, i am a student living in <span class="var-highlight">Austria</span>.<br> In my free time i often work on <span class="string-highlight">electronic projects</span> and <span class="string-highlight">develop software</span>.<br><br> I am interested in <span class="string-highlight">security</span>, <span class="string-highlight">reverse engineering</span> and <span class="string-highlight">networking</span>.<br> If you want to get in touch with me you can use this email address: <br>
-                        <span class="var-highlight">info[at]hold-solutions[dot]de</span><br><br> or Telegram: <br><span class="var-highlight">[at]DarkSunHD</span>
+                        <span class="var-highlight">info[at]hold-solutions[dot]de</span><br><br> or Telegram: <br><span class="var-highlight">[at]UnHold</span>
                     </h4>
                     <br><br>
 
                     <table class="mobiletable">
                         <tr>
                             <td>
-                                <button class="buttonmob" id="projectsbuttonmob" onclick="aniprojectsmob()">Projects</button>
+                                <button class="buttonmob" id="privatebuttonmob" onclick="aniprivatemob()">Private</button>
                             </td>
                         </tr>
                         <tr>
@@ -149,7 +149,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <button class="buttonmob" id="impressumbuttonmob" onclick="aniimpressummob()">Impressum</button>
+                                <button class="buttonmob" id="mailbuttonmob" onclick="animailmob()">Mail</button>
                             </td>
                         </tr>
 
@@ -158,72 +158,14 @@
             </div>
 
         </div>
-        <div class="projectsmobmain" id="projectsmobmain" hidden="hidden">
-            <div class="projectsmob1" id="projectsmob1">
-                <div class="projectsmob2" id="projectsmob2">
-                    <h1 class="biggerh1">Projects</h1>
+        <div class="privatemobmain" id="privatemobmain" hidden="hidden">
+            <div class="privatemob1" id="privatemob1">
+                <div class="privatemob2" id="privatemob2">
+                    <h1 class="biggerh1">Private</h1>
 
-                    <h4>
-                        Search:
-                        <input id='projectssearch' onkeyup='searchTableProjects()' type='text'>
-                    </h4>
                     
-                    <div class="scrollbarmob" id="scrollproject">
-                        <div class="force-overflowproject">
-                            <h4>
-                                <table id='projectstable'>
-                                    <tr>
-                                        <td>Launchpad and Laserharp</td>
-                                        <td>
-                                            <button class="button" onclick="window.location.href='/blog/Launchpad_and_Laserharp.html'">Read more</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>STM32 Serial-MIDI - USB-MIDI bridge</td>
-                                        <td>
-                                            <button class="button" onclick="window.location.href='/blog/STM32_Serial-MIDI_-_USB-MIDI-bridge.html'">Read more</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Website: Hold-Solutions</td>
-                                        <td>
-                                            <button class="button" onclick="window.location.href='/blog/Website:_Hold-Solutions.html'">Read more</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </h4>
-                            
-                            <script>
-                                function searchTableProjects() {
-                                    var input, filter, found, table, tr, td, i, j;
-                                    input = document.getElementById("projectssearch");
-                                    filter = input.value.toUpperCase();
-                                    table = document.getElementById("projectstable");
-                                    tr = table.getElementsByTagName("tr");
-
-                                    for (i = 0; i < tr.length; i++) {
-                                        td = tr[i].getElementsByTagName("td");
-
-                                        for (j = 0; j < td.length; j++) {
-                                            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                                found = true;
-                                            }
-                                        }
-
-                                        if (found) {
-                                            tr[i].style.display = "";
-                                            found = false;
-                                        } else {
-                                            tr[i].style.display = "none";
-                                        }
-                                    }
-                                }
-
-                            </script>
-                        </div>
-                    </div>
                     
-                    <button class="buttonmob2" onclick="aniprojectsmobclose()">Close</button>
+                    <button class="buttonmob2" onclick="aniprivatemobclose()">Close</button>
                 </div>
             </div>
         </div>
@@ -313,14 +255,14 @@
             </div>
         </div>
 
-        <div class="impressummobmain" id="impressummobmain" hidden="hidden">
-            <div class="impressummob1" id="impressummob1">
-                <div class="impressummob2" id="impressummob2">
-                    <h1 class="biggerh1">Impressum</h1>
+        <div class="mailmobmain" id="mailmobmain" hidden="hidden">
+            <div class="mailmob1" id="mailmob1">
+                <div class="mailmob2" id="mailmob2">
+                    <h1 class="biggerh1">Mail</h1>
                     <h4>
-                        *insert good impressum*
+                        *mail will come soon*
                     </h4>
-                    <button class="buttonmob2" onclick="aniimpressummobclose()">Close</button>
+                    <button class="buttonmob2" onclick="animailmobclose()">Close</button>
                 </div>
             </div>
         </div>
@@ -333,7 +275,7 @@
         var open = false;
 
 
-        function aniprojectsmob() {
+        function aniprivatemob() {
 
             // 1 show 
             // 2 hide
@@ -347,18 +289,18 @@
             close = false;
 
 
-            var elm = document.getElementById('projectsmob1');
+            var elm = document.getElementById('privatemob1');
             var newone = elm.cloneNode(true);
             elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('projectsmob1').className = 'unbluranimation';
-            document.getElementById('projectsmob1').style.webkitAnimationPlayState = "running";
+            document.getElementById('privatemob1').className = 'unbluranimation';
+            document.getElementById('privatemob1').style.webkitAnimationPlayState = "running";
 
 
-            elm = document.getElementById('projectsmob2');
+            elm = document.getElementById('privatemob2');
             newone = elm.cloneNode(true);
             elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('projectsmob2').className = 'bluranimation';
-            document.getElementById('projectsmob2').style.webkitAnimationPlayState = "paused";
+            document.getElementById('privatemob2').className = 'bluranimation';
+            document.getElementById('privatemob2').style.webkitAnimationPlayState = "paused";
 
             elm = document.getElementById('startmob2');
             newone = elm.cloneNode(true);
@@ -366,7 +308,7 @@
             document.getElementById('startmob2').className = 'bluranimation';
             document.getElementById('startmob2').style.webkitAnimationPlayState = "running";
 
-            document.getElementById('projectsmobmain').hidden = "";
+            document.getElementById('privatemobmain').hidden = "";
 
             open = true;
             var aniobj = document.getElementById('startmob2');
@@ -379,7 +321,7 @@
 
         }
 
-        function aniprojectsmobclose() {
+        function aniprivatemobclose() {
             
             if(activeclose){
                 return;
@@ -394,11 +336,11 @@
             document.getElementById('startmob2').className = 'bluranimation';
             document.getElementById('startmob2').style.webkitAnimationPlayState = "paused";
 
-            elm = document.getElementById('projectsmob2');
+            elm = document.getElementById('privatemob2');
             newone = elm.cloneNode(true);
             elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('projectsmob2').className = 'bluranimation';
-            document.getElementById('projectsmob2').style.webkitAnimationPlayState = "running";
+            document.getElementById('privatemob2').className = 'bluranimation';
+            document.getElementById('privatemob2').style.webkitAnimationPlayState = "running";
 
             elm = document.getElementById('startmob1');
             newone = elm.cloneNode(true);
@@ -413,10 +355,10 @@
             var aniobj = document.getElementById('startmob1');
             aniobj.addEventListener("webkitAnimationEnd", function(e) {
                 if (close) {
-                    document.getElementById('projectsmobmain').hidden = "hidden";
+                    document.getElementById('privatemobmain').hidden = "hidden";
                     document.getElementById('linksmobmain').hidden = "hidden";
                     document.getElementById('downloadmobmain').hidden = "hidden";
-                    document.getElementById('impressummobmain').hidden = "hidden";
+                    document.getElementById('mailmobmain').hidden = "hidden";
                     activeclose = false;
                 }
             }, false);
@@ -509,10 +451,10 @@
             var aniobj = document.getElementById('startmob1');
             aniobj.addEventListener("webkitAnimationEnd", function(e) {
                 if (close) {
-                    document.getElementById('projectsmobmain').hidden = "hidden";
+                    document.getElementById('privatemobmain').hidden = "hidden";
                     document.getElementById('linksmobmain').hidden = "hidden";
                     document.getElementById('downloadmobmain').hidden = "hidden";
-                    document.getElementById('impressummobmain').hidden = "hidden";
+                    document.getElementById('mailmobmain').hidden = "hidden";
                     activeclose = false;
                 }
             }, false);
@@ -605,10 +547,10 @@
             var aniobj = document.getElementById('startmob1');
             aniobj.addEventListener("webkitAnimationEnd", function(e) {
                 if (close) {
-                    document.getElementById('projectsmobmain').hidden = "hidden";
+                    document.getElementById('privatemobmain').hidden = "hidden";
                     document.getElementById('linksmobmain').hidden = "hidden";
                     document.getElementById('downloadmobmain').hidden = "hidden";
-                    document.getElementById('impressummobmain').hidden = "hidden";
+                    document.getElementById('mailmobmain').hidden = "hidden";
                     activeclose = false;
                 }
             }, false);
@@ -621,7 +563,7 @@
         }
 
 
-        function aniimpressummob() {
+        function animailmob() {
 
             // 1 show 
             // 2 hide
@@ -635,18 +577,18 @@
             close = false;
 
 
-            var elm = document.getElementById('impressummob1');
+            var elm = document.getElementById('mailmob1');
             var newone = elm.cloneNode(true);
             elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('impressummob1').className = 'unbluranimation';
-            document.getElementById('impressummob1').style.webkitAnimationPlayState = "running";
+            document.getElementById('mailmob1').className = 'unbluranimation';
+            document.getElementById('mailmob1').style.webkitAnimationPlayState = "running";
 
 
-            elm = document.getElementById('impressummob2');
+            elm = document.getElementById('mailmob2');
             newone = elm.cloneNode(true);
             elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('impressummob2').className = 'bluranimation';
-            document.getElementById('impressummob2').style.webkitAnimationPlayState = "paused";
+            document.getElementById('mailmob2').className = 'bluranimation';
+            document.getElementById('mailmob2').style.webkitAnimationPlayState = "paused";
 
             elm = document.getElementById('startmob2');
             newone = elm.cloneNode(true);
@@ -654,7 +596,7 @@
             document.getElementById('startmob2').className = 'bluranimation';
             document.getElementById('startmob2').style.webkitAnimationPlayState = "running";
 
-            document.getElementById('impressummobmain').hidden = "";
+            document.getElementById('mailmobmain').hidden = "";
 
             open = true;
             var aniobj = document.getElementById('startmob2');
@@ -667,7 +609,7 @@
 
         }
 
-        function aniimpressummobclose() {
+        function animailmobclose() {
 
             if(activeclose){
                 return;
@@ -682,11 +624,11 @@
             document.getElementById('startmob2').className = 'bluranimation';
             document.getElementById('startmob2').style.webkitAnimationPlayState = "paused";
 
-            elm = document.getElementById('impressummob2');
+            elm = document.getElementById('mailmob2');
             newone = elm.cloneNode(true);
             elm.parentNode.replaceChild(newone, elm);
-            document.getElementById('impressummob2').className = 'bluranimation';
-            document.getElementById('impressummob2').style.webkitAnimationPlayState = "running";
+            document.getElementById('mailmob2').className = 'bluranimation';
+            document.getElementById('mailmob2').style.webkitAnimationPlayState = "running";
 
             elm = document.getElementById('startmob1');
             newone = elm.cloneNode(true);
@@ -701,10 +643,10 @@
             var aniobj = document.getElementById('startmob1');
             aniobj.addEventListener("webkitAnimationEnd", function(e) {
                 if (close) {
-                    document.getElementById('projectsmobmain').hidden = "hidden";
+                    document.getElementById('privatemobmain').hidden = "hidden";
                     document.getElementById('linksmobmain').hidden = "hidden";
                     document.getElementById('downloadmobmain').hidden = "hidden";
-                    document.getElementById('impressummobmain').hidden = "hidden";
+                    document.getElementById('mailmobmain').hidden = "hidden";
                     activeclose = false;
                 }
             }, false);

@@ -535,7 +535,7 @@ table th {
     pointer-events: all;
 }
 
-.projects {
+.private {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -562,7 +562,7 @@ table th {
     pointer-events: none;
 }
 
-.impressum {
+.mail {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -714,7 +714,7 @@ table th {
     z-index: 10;
 }
 
-.projectsmobmain {
+.privatemobmain {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -741,7 +741,7 @@ table th {
     z-index: 10;
 }
 
-.impressummobmain {
+.mailmobmain {
     position: absolute;
     top: 0px;
     left: 0px;

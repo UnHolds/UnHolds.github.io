@@ -3,7 +3,7 @@
     
     <!--  TODO:
         -> add bool for button (do not trigger if close is active!)
-        -> Impressum to Mail
+        -> mail to Mail
         -> Project to Private
     -->
 <head>
@@ -38,15 +38,15 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
 								</pre>
                         </div>
                         <div class="maintext" id="maintext">
-                            My name is <span class="var-highlight">Hold Alexander</span>, i am a student living in <span class="var-highlight">Austria</span>.<br> In my free time i often work on <span class="string-highlight">electronic projects</span> and <span class="string-highlight">develop software</span>.<br> I am interested in <span class="string-highlight">security</span>, <span class="string-highlight">reverse engineering</span> and <span class="string-highlight">networking</span>.<br>
-                            <br> If you want to get in touch with me you can use <br> this email address: <span class="var-highlight">info[at]hold-solutions[dot]de</span><br> or Telegram: <span class="var-highlight">[at]DarkSunHD</span><br>
+                            My name is <span class="var-highlight">Hold Alexander</span>, i am a student living in <span class="var-highlight">Austria</span>.<br> In my free time i often work on <span class="string-highlight">electronic private</span> and <span class="string-highlight">develop software</span>.<br> I am interested in <span class="string-highlight">security</span>, <span class="string-highlight">reverse engineering</span> and <span class="string-highlight">networking</span>.<br>
+                            <br> If you want to get in touch with me you can use <br> this email address: <span class="var-highlight">info[at]hold-solutions[dot]de</span><br> or Telegram: <span class="var-highlight">[at]UnHold</span><br>
                         </div>
                         <div class="buttoncont">
                             <table>
                                 <tbody>
                                     <tr>
                                         <td data-label="">
-                                            <button class="button" id="projectsbutton" onclick="aniprojects()">Projects</button>
+                                            <button class="button" id="privatebutton" onclick="aniprivate()">Private</button>
                                         </td>
                                         <td data-label="">
                                             <button class="button" id="linksbutton" onclick="anilinks()">Links</button>
@@ -55,7 +55,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                                             <button class="button" id="downloadbutton" onclick="anidownload()">Download</button>
                                         </td>
                                         <td data-label="">
-                                            <button class="button" id="impressumbutton" onclick="aniimpressum()">Impressum</button>
+                                            <button class="button" id="mailbutton" onclick="animail()">Mail</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -135,73 +135,19 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                 </div>
             </div>
 
-            <div class="projects" id="projectsmain">
-                <div class="subprojects" id="projectsani">
-                    <div id="projectsani2">
+            <div class="private" id="privatemain">
+                <div class="subprivate" id="privateani">
+                    <div id="privateani2">
                         <h1>
-                            Projects
+                            Private
                         </h1>
-                        <!--
+                        
+                        <!-- Insert login stuff -->
                         <h4>
-                            Search:
-                            <input id='projectssearch' onkeyup='searchTable()' type='text'>
+                            *Login will be added soon!*
                         </h4>
-
-                        <div class="scrollbar" id="scrollproject">
-                            <div class="force-overflowproject">
-                                <h4>
-                                    <table id='projectstale'>
-                                        <tr>
-                                            <td>Launchpad and Laserharp</td>
-                                            <td>
-                                                <button class="button" onclick="window.location.href='blog/Launchpad_and_Laserharp.html'">Read more</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>STM32 Serial-MIDI - USB-MIDI bridge</td>
-                                            <td>
-                                                <button class="button" onclick="window.location.href='blog/STM32_Serial-MIDI_-_USB-MIDI-bridge.html'">Read more</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Website: Hold-Solutions</td>
-                                            <td>
-                                                <button class="button" onclick="window.location.href='blog/Website:_Hold-Solutions.html'">Read more</button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </h4>
-                                <script>
-                                    function searchTable() {
-                                        var input, filter, found, table, tr, td, i, j;
-                                        input = document.getElementById("projectssearch");
-                                        filter = input.value.toUpperCase();
-                                        table = document.getElementById("projectstale");
-                                        tr = table.getElementsByTagName("tr");
-
-                                        for (i = 0; i < tr.length; i++) {
-                                            td = tr[i].getElementsByTagName("td");
-
-                                            for (j = 0; j < td.length; j++) {
-                                                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                                    found = true;
-                                                }
-                                            }
-
-                                            if (found) {
-                                                tr[i].style.display = "";
-                                                found = false;
-                                            } else {
-                                                tr[i].style.display = "none";
-                                            }
-                                        }
-                                    }
-
-                                </script>
-                            </div>
-                        </div>
-                        -->
-                        <button class="button2" id="projectsclosebutton" onclick="aniprojectsclose()">Close</button>
+                        
+                        <button class="button2" id="privateclosebutton" onclick="aniprivateclose()">Close</button>
                     </div>
                 </div>
             </div>
@@ -284,23 +230,23 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                 </div>
             </div>
 
-            <div class="impressum" id="impressummain">
-                <div class="subimpressum" id="impressumani">
-                    <div id="impressumani2">
-                        <h1>Impressum</h1>
+            <div class="mail" id="mailmain">
+                <div class="submail" id="mailani">
+                    <div id="mailani2">
+                        <h1>Mail</h1>
                         <h4>
-                            *insert good impressum*
+                            *Here will be something for mail*
                         </h4>
-                        <button class="button2" id="impressumclosebutton" onclick="aniimpressumclose()">Close</button>
+                        <button class="button2" id="mailclosebutton" onclick="animailclose()">Close</button>
                     </div>
                 </div>
             </div>
 
             <script type="text/javascript">
-                var firststartprojects = true;
+                var firststartprivate = true;
                 var firststartlinks = true;
                 var firststartdownload = true;
-                var firststartimpressum = true;
+                var firststartmail = true;
 
 
                 var firstst = true;
@@ -312,7 +258,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                 var open = false;
 
 
-                function aniprojects() {
+                function aniprivate() {
 
                     // 1 show 
                     // 2 hide
@@ -327,26 +273,26 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
 
                     active = true;
 
-                    if (firststartprojects) {
-                        document.getElementsByClassName('subprojects')[0].style.visibility = 'visible';
-                        firststartprojects = false;
+                    if (firststartprivate) {
+                        document.getElementsByClassName('subprivate')[0].style.visibility = 'visible';
+                        firststartprivate = false;
                     }
 
                     close = false;
 
 
-                    var elm = document.getElementById('projectsani');
+                    var elm = document.getElementById('privateani');
                     var newone = elm.cloneNode(true);
                     elm.parentNode.replaceChild(newone, elm);
-                    document.getElementById('projectsani').className = 'unbluranimation';
-                    document.getElementById('projectsani').style.webkitAnimationPlayState = "running";
+                    document.getElementById('privateani').className = 'unbluranimation';
+                    document.getElementById('privateani').style.webkitAnimationPlayState = "running";
 
 
-                    elm = document.getElementById('projectsani2');
+                    elm = document.getElementById('privateani2');
                     newone = elm.cloneNode(true);
                     elm.parentNode.replaceChild(newone, elm);
-                    document.getElementById('projectsani2').className = 'bluranimation';
-                    document.getElementById('projectsani2').style.webkitAnimationPlayState = "paused";
+                    document.getElementById('privateani2').className = 'bluranimation';
+                    document.getElementById('privateani2').style.webkitAnimationPlayState = "paused";
 
                     elm = document.getElementById('mainstart2');
                     newone = elm.cloneNode(true);
@@ -360,7 +306,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     document.getElementById('headline2').className = 'bluranimation';
                     document.getElementById('headline2').style.webkitAnimationPlayState = "running";
 
-                    document.getElementById('projectsmain').hidden = "";
+                    document.getElementById('privatemain').hidden = "";
 
                     open = true;
                     var aniobj = document.getElementById('headline2');
@@ -373,7 +319,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
 
                 }
 
-                function aniprojectsclose() {
+                function aniprivateclose() {
 
                     if(activeclose){
                         return;
@@ -388,11 +334,11 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     document.getElementById('mainstart2').className = 'bluranimation';
                     document.getElementById('mainstart2').style.webkitAnimationPlayState = "paused";
 
-                    elm = document.getElementById('projectsani2');
+                    elm = document.getElementById('privateani2');
                     newone = elm.cloneNode(true);
                     elm.parentNode.replaceChild(newone, elm);
-                    document.getElementById('projectsani2').className = 'bluranimation';
-                    document.getElementById('projectsani2').style.webkitAnimationPlayState = "running";
+                    document.getElementById('privateani2').className = 'bluranimation';
+                    document.getElementById('privateani2').style.webkitAnimationPlayState = "running";
 
                     elm = document.getElementById('mainstart');
                     newone = elm.cloneNode(true);
@@ -423,7 +369,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     var aniobj = document.getElementById('headline');
                     aniobj.addEventListener("webkitAnimationEnd", function(e) {
                         if (close) {
-                            document.getElementById('projectsmain').hidden = "hidden";
+                            document.getElementById('privatemain').hidden = "hidden";
                             activeclose = false;
                             active = false;
                         }
@@ -693,7 +639,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
 
 
 
-                function aniimpressum() {
+                function animail() {
 
                     // 1 show 
                     // 2 hide
@@ -708,24 +654,24 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     active = true;
 
 
-                    if (firststartimpressum) {
-                        document.getElementsByClassName('subimpressum')[0].style.visibility = 'visible';
-                        firststartimpressum = false;
+                    if (firststartmail) {
+                        document.getElementsByClassName('submail')[0].style.visibility = 'visible';
+                        firststartmail = false;
                     }
 
                     close = false;
 
-                    var elm = document.getElementById('impressumani');
+                    var elm = document.getElementById('mailani');
                     var newone = elm.cloneNode(true);
                     elm.parentNode.replaceChild(newone, elm);
-                    document.getElementById('impressumani').className = 'unbluranimation';
-                    document.getElementById('impressumani').style.webkitAnimationPlayState = "running";
+                    document.getElementById('mailani').className = 'unbluranimation';
+                    document.getElementById('mailani').style.webkitAnimationPlayState = "running";
 
-                    elm = document.getElementById('impressumani2');
+                    elm = document.getElementById('mailani2');
                     newone = elm.cloneNode(true);
                     elm.parentNode.replaceChild(newone, elm);
-                    document.getElementById('impressumani2').className = 'bluranimation';
-                    document.getElementById('impressumani2').style.webkitAnimationPlayState = "paused";
+                    document.getElementById('mailani2').className = 'bluranimation';
+                    document.getElementById('mailani2').style.webkitAnimationPlayState = "paused";
 
                     elm = document.getElementById('mainstart2');
                     newone = elm.cloneNode(true);
@@ -739,7 +685,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     document.getElementById('headline2').className = 'bluranimation';
                     document.getElementById('headline2').style.webkitAnimationPlayState = "running";
 
-                    document.getElementById('impressummain').hidden = "";
+                    document.getElementById('mailmain').hidden = "";
 
                     open = true;
                     var aniobj = document.getElementById('headline2');
@@ -752,7 +698,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
 
                 }
 
-                function aniimpressumclose() {
+                function animailclose() {
 
                     if(activeclose){
                         return;
@@ -767,11 +713,11 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     document.getElementById('mainstart2').className = 'bluranimation';
                     document.getElementById('mainstart2').style.webkitAnimationPlayState = "paused";
 
-                    elm = document.getElementById('impressumani2');
+                    elm = document.getElementById('mailani2');
                     newone = elm.cloneNode(true);
                     elm.parentNode.replaceChild(newone, elm);
-                    document.getElementById('impressumani2').className = 'bluranimation';
-                    document.getElementById('impressumani2').style.webkitAnimationPlayState = "running";
+                    document.getElementById('mailani2').className = 'bluranimation';
+                    document.getElementById('mailani2').style.webkitAnimationPlayState = "running";
 
                     elm = document.getElementById('mainstart');
                     newone = elm.cloneNode(true);
@@ -804,7 +750,7 @@ or Telegram: <span class="var-highlight">[at]DarkSunHD</span>
                     var aniobj = document.getElementById('headline');
                     aniobj.addEventListener("webkitAnimationEnd", function(e) {
                         if (close) {
-                            document.getElementById('impressummain').hidden = "hidden";
+                            document.getElementById('mailmain').hidden = "hidden";
                             activeclose = false;
                             active = false;
                         }

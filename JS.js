@@ -294,10 +294,10 @@ Particle = function (xPos, yPos) {
 
 function setup() {
 
-    document.getElementsByClassName('subprojects')[0].style.visibility = 'hidden';
+    document.getElementsByClassName('subprivate')[0].style.visibility = 'hidden';
     document.getElementsByClassName('sublinks')[0].style.visibility = 'hidden';
     document.getElementsByClassName('subdownload')[0].style.visibility = 'hidden';
-    document.getElementsByClassName('subimpressum')[0].style.visibility = 'hidden';
+    document.getElementsByClassName('submail')[0].style.visibility = 'hidden';
 
     document.getElementsByClassName('maintext')[0].style.visibility = 'hidden';
 
