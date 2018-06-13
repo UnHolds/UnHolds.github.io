@@ -424,6 +424,7 @@ body {
     color: #00FFFF;
 }
 
+
 .buttoncont {
     margin: auto;
     position: absolute;
@@ -518,6 +519,11 @@ table th {
 }
 
 .unbluranimation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     -webkit-animation-name: unblurani;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: 1;
@@ -527,6 +533,11 @@ table th {
 }
 
 .bluranimation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     -webkit-animation-name: blurani;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: 1;
