@@ -103,6 +103,8 @@ body {
 }
 
 .headline {
+    position: absolute;
+    top: 20px;
     width: 930;
     height: 115;
     margin-left: -300px;
@@ -183,6 +185,8 @@ body {
 
 @media only screen and (max-width: 450px) and (min-width:100px) {
     .headline {
+        position: absolute;
+        top: 20px;
         width: 930;
         height: 115;
         margin-left: -120px;
@@ -202,6 +206,8 @@ body {
 
 @media only screen and (max-width: 1000px) and (min-width:450px) {
     .headline {
+        position: absolute;
+        top: 20px;
         width: 930;
         height: 115;
         margin-left: -180px;
